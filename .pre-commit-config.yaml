@@ -1,0 +1,10 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    # Check for the latest tag: https://github.com/astral-sh/ruff-pre-commit/tags
+    rev: v0.9.0
+    hooks:
+      # Run the linter
+      - id: ruff-check
+        args: [--fix]
+      # Run the formatter (optional)
+      - id: ruff-format
