@@ -4,4 +4,32 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+    "ruff>=0.16.9",
+]
+
+
+[tool.ruff]
+# Target Python version
+target-version = "py311"
+
+[tool.ruff.lint]
+# Enable rules for type checking (TC) and quote consistency (Q)
+select = [
+    "E",   # pycodestyle errors
+    "F",   # Pyflakes
+    "TC",  # flake8-type-checking (enforces string annotations / TYPE_CHECKING blocks)
+    "Q",   # flake8-quotes (enforces consistent string quotes)
+]
+
+[tool.ruff.lint.flake8-type-checking]
+# Automatically move type-only imports into `if TYPE_CHECKING:` blocks as string references
+strict = true
+
+[tool.ruff.lint.flake8-quotes]
+# Enforce single or double quotes for strings
+inline-quotes = "double"
+multiline-quotes = "double"
+docstring-quotes = "double"
